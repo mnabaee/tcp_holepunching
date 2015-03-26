@@ -1,5 +1,5 @@
 #!/bin/bash
 
 echo 'building binary files for server and client'
-g++ server.cc -o server -lpthread
-g++ client.cc -o client -lpthread
+g++ src/server.cc -o bin/server.out -lpthread
+g++ src/client.cc -o bin/client.out -lpthread
