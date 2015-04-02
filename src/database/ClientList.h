@@ -16,7 +16,7 @@ class ClientList{
 	public:
 		ClientList();
 		~ClientList();
-		bool addClient(uint32_t address, uint16_t port, std::string userName, std::string passwdHash, int peerId);
+		bool addClient(std::string userName, std::string passwdHash);
 		bool removeClient(std::string userName);
 		bool initDatabase(std::string fileName);
 		bool closeDatabase();
@@ -25,7 +25,7 @@ class ClientList{
 		bool clearDatabase();
 	private:
 		std::string m_data_file_name;
-		std::ofstream m_ofstream;
+		std::fstream m_fstream;
 };
 
 
