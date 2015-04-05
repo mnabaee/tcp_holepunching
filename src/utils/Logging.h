@@ -31,13 +31,10 @@ public:
 							if(prio == Logging::WARNING) prio_str = "WARNING"; \
 							if(prio == Logging::ERROR) prio_str = "ERROR"; \
 							if(prio == Logging::FATAL) prio_str = "FATAL"; \
+							if(Logging::getInstance()->isLevelEnabled(prio)) \
 							printf("%s:: %s (%d): "msg" \n", \
 									prio_str, __FILE__, __LINE__, ##__VA_ARGS__);\
 						} while (false)
-	#define LogEvt(prio,msg,...) do{\
-								if(Logging::getInstance()->isLevelEnabled(prio)) LOG_MESSAGE(prio,msg,...) \
-								}while(false)
-
-
+	#define Log(prio,msg,...) LOG_MESSAGE(#prio,#msg,...)
 };
 #endif /* LOGGING_H_ */

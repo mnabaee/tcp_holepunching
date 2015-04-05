@@ -27,7 +27,8 @@ int main(){
 	Logging::getInstance()->setLevel(Logging::INFO,true);
 
 	LOG_MESSAGE(Logging::INFO,"hey %d",34);
-	LogEvt(Logging::INFO,"hey %d",55);
+	LOG_MESSAGE(Logging::WARNING,"hey %d",34);
+
 
 	return 0;
 
